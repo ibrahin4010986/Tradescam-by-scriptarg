@@ -3,7 +3,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 -- Crear una ventana
 local Window = OrionLib:MakeWindow({
-    Name = "Scriptarg Trade Scam",
+    Name = "Scriptarg Trade Scam",  -- Nombre de la ventana
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "OrionHubConfig"
@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({
 
 -- Crear una pestaña
 local Tab = Window:MakeTab({
-    Name = "Main",
+    Name = "Trade Scam",  -- Nombre de la pestaña cambiado a "Trade Scam"
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -30,6 +30,13 @@ Tab:AddButton({
     Callback = function()
         -- Sin funcionalidad
     end
+})
+
+-- Agregar un botón no interactivo como cartel
+Tab:AddButton({
+    Name = "Nota: apretar bien los botones y esperar de 3-5 minutos para que funcione",
+    Callback = function() end, -- No hace nada
+    Interactable = false -- Deshabilitar interacción (cartel)
 })
 
 -- Inicializar la interfaz
