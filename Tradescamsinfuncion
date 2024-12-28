@@ -1,0 +1,36 @@
+-- Cargar la librería Orion
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Crear una ventana
+local Window = OrionLib:MakeWindow({
+    Name = "Scriptarg Trade Scam",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionHubConfig"
+})
+
+-- Crear una pestaña
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Agregar un botón: Freeze Trade (sin funcionalidad)
+Tab:AddButton({
+    Name = "Freeze Trade",
+    Callback = function()
+        -- Sin funcionalidad
+    end
+})
+
+-- Agregar un botón: Forced Ready/Accept (sin funcionalidad)
+Tab:AddButton({
+    Name = "Forced Ready/Accept",
+    Callback = function()
+        -- Sin funcionalidad
+    end
+})
+
+-- Inicializar la interfaz
+OrionLib:Init()
